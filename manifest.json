@@ -1,0 +1,49 @@
+{
+    "name": "Rallly",
+    "id": "rallly",
+    "packaging_format": 1,
+    "description": {
+        "en": "Group-meeting manager",
+        "fr": "Group-meeting manager"
+    },
+    "version": "1.0~ynh1",
+    "url": "https://rallly.co/fr",
+    "upstream": {
+        "license": "AGPL-3.0",
+        "website": "https://rallly.co/fr",
+        "demo": "https://demo.example.com",
+        "admindoc": "https://yunohost.org/packaging_apps",
+        "userdoc": "https://yunohost.org/apps",
+        "code": "https://github.com/lukevella/rallly"
+    },
+    "license": "AGPL-3.0",
+    "maintainer": {
+        "name": "John doe",
+        "email": "john.doe@example.com"
+    },
+    "requirements": {
+        "yunohost": ">= 11.0.0"
+    },
+    "multi_instance": true,
+    "services": [
+        "nginx",
+        "mysql"
+    ],
+    "arguments": {
+        "install": [
+            {
+                "name": "domain",
+                "type": "domain"
+            },
+            {
+                "name": "is_public",
+                "type": "boolean",
+                "default": true
+            },
+            {
+                "name": "admin",
+                "type": "user"
+            }
+        ]
+    }
+}
