@@ -11,15 +11,13 @@
     "upstream": {
         "license": "AGPL-3.0",
         "website": "https://rallly.co/fr",
-        "demo": "https://demo.example.com",
-        "admindoc": "https://yunohost.org/packaging_apps",
-        "userdoc": "https://yunohost.org/apps",
+        "admindoc": "https://support.rallly.co/",
         "code": "https://github.com/lukevella/rallly"
     },
     "license": "AGPL-3.0",
     "maintainer": {
-        "name": "John doe",
-        "email": "john.doe@example.com"
+        "name": "",
+        "email": ""
     },
     "requirements": {
         "yunohost": ">= 11.0.0"
