@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__FINALPATH__/
+WorkingDirectory=__INSTALL_DIR__/
 Environment=NODE_ENV=production
 Environment=PORT=__PORT__
 Environment="__YNH_NODE_LOAD_PATH__"
