@@ -8,8 +8,6 @@
 
 nodejs_version=16
 
-#REMOVEME? pkg_dependencies="postgresql"
-
 #=================================================
 # PERSONAL HELPERS
 #=================================================
