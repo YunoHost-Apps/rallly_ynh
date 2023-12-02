@@ -29,7 +29,7 @@ Schedule group meetings with friends, colleagues and teams. Create meeting polls
 * Site officiel de l’app : <https://rallly.co/fr>
 * Documentation officielle de l’admin : <https://support.rallly.co/>
 * Dépôt de code officiel de l’app : <https://github.com/lukevella/rallly>
-* Documentation YunoHost pour cette app : <https://yunohost.org/app_rallly>
+* YunoHost Store: <https://apps.yunohost.org/app/rallly>
 * Signaler un bug : <https://github.com/YunoHost-Apps/rallly_ynh/issues>
 
 ## Informations pour les développeurs
