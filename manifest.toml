@@ -7,7 +7,7 @@ description.fr = "Organisation de réunions de groupe"
 
 version = "3.5.1~ynh1"
 
-maintainers = []
+maintainers = ["eric_G"]
 
 [upstream]
 license = "AGPL-3.0"
