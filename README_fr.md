@@ -20,6 +20,8 @@ Planifiez des réunions de groupe avec des amis, des collègues et des équipes.
 
 **Version incluse :** 3.5.1~ynh1
 
+**Démo :** https://app.rallly.co/polls
+
 ## Captures d’écran
 
 ![Capture d’écran de Rallly](./doc/screenshots/screenshot.png)
