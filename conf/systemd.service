@@ -1,14 +1,14 @@
 [Unit]
-Description=Rallly: Group-meeting manager
+Description=Rallly: Tool for creating scheduling polls
 After=network.target
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__FINALPATH__/
-Environment=NODE_ENV=production
-Environment=PORT=__PORT__
+WorkingDirectory=__INSTALL_DIR__/
+Environment="NODE_ENV=production"
+Environment="PORT=__PORT__"
 Environment="__YNH_NODE_LOAD_PATH__"
 ExecStart=__YNH_NPM__ run start
 
