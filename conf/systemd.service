@@ -1,5 +1,5 @@
 [Unit]
-Description=Rallly: Group-meeting manager
+Description=Rallly: Tool for creating scheduling polls
 After=network.target
 
 [Service]
