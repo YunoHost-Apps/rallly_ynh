@@ -20,6 +20,8 @@ Schedule group meetings with friends, colleagues and teams. Create meeting polls
 
 **Shipped version:** 3.5.1~ynh1
 
+**Demo:** https://app.rallly.co/polls
+
 ## Screenshots
 
 ![Screenshot of Rallly](./doc/screenshots/screenshot.png)
