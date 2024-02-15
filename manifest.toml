@@ -12,6 +12,7 @@ maintainers = []
 [upstream]
 license = "AGPL-3.0"
 website = "https://rallly.co/fr"
+demo = "https://app.rallly.co/polls"
 admindoc = "https://support.rallly.co/"
 code = "https://github.com/lukevella/rallly"
 
