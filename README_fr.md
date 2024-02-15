@@ -29,7 +29,7 @@ Planifiez des réunions de groupe avec des amis, des collègues et des équipes.
 ## Documentations et ressources
 
 * Site officiel de l’app : <https://rallly.co/fr>
-* Documentation officielle de l’admin : <https://support.rallly.co/>
+* Documentation officielle de l’admin : <https://support.rallly.co/introduction>
 * Dépôt de code officiel de l’app : <https://github.com/lukevella/rallly>
 * YunoHost Store: <https://apps.yunohost.org/app/rallly>
 * Signaler un bug : <https://github.com/YunoHost-Apps/rallly_ynh/issues>
