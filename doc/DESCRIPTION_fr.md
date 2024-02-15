@@ -1,0 +1,1 @@
+Planifiez des réunions de groupe avec des amis, des collègues et des équipes. Créez des sondages de réunion pour trouver la meilleure date et heure pour organiser un événement en fonction de la disponibilité de vos participants.
