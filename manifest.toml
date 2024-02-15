@@ -13,7 +13,7 @@ maintainers = ["eric_G"]
 license = "AGPL-3.0"
 website = "https://rallly.co/fr"
 demo = "https://app.rallly.co/polls"
-admindoc = "https://support.rallly.co/"
+admindoc = "https://support.rallly.co/introduction"
 code = "https://github.com/lukevella/rallly"
 
 [integration]
