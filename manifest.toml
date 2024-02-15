@@ -3,7 +3,7 @@ packaging_format = 2
 id = "rallly"
 name = "Rallly"
 description.en = "Group-meeting manager"
-description.fr = "Group-meeting manager"
+description.fr = "Organisation de réunions de groupe"
 
 version = "3.5.1~ynh1"
 
