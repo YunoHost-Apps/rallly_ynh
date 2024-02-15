@@ -6,7 +6,7 @@
 # PHP APP SPECIFIC
 #=================================================
 
-nodejs_version=16
+nodejs_version=18
 
 main_domain=$(cat /etc/yunohost/current_host)
 
