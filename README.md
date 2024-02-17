@@ -18,7 +18,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 
 Schedule group meetings with friends, colleagues and teams. Create meeting polls to find the best date and time to organize an event based on your participants' availability.
 
-**Shipped version:** 3.5.1~ynh1
+**Shipped version:** 3.6.1~ynh1
 
 **Demo:** https://app.rallly.co/polls
 
