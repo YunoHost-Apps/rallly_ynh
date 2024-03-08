@@ -17,7 +17,7 @@ Si vous n’avez pas YunoHost, regardez [ici](https://yunohost.org/#/install) po
 ## Vue d’ensemble
 
 Planifiez des réunions de groupe avec des amis, des collègues et des équipes. Créez des sondages de réunion pour trouver la meilleure date et heure pour organiser un événement en fonction de la disponibilité de vos participants.
-**Version incluse :** 3.5.1~ynh1
+**Version incluse :** 3.5.1~ynh2
 
 **Démo :** <https://app.rallly.co/polls>
 
