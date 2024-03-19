@@ -17,7 +17,7 @@ If you don't have YunoHost, please consult [the guide](https://yunohost.org/#/in
 ## Overview
 
 Schedule group meetings with friends, colleagues and teams. Create meeting polls to find the best date and time to organize an event based on your participants' availability.
-**Shipped version:** 3.5.1~ynh2
+**Shipped version:** 3.7.0~ynh1
 
 **Demo:** <https://app.rallly.co/polls>
 
@@ -39,7 +39,7 @@ Please send your pull request to the [testing branch](https://github.com/YunoHos
 
 To try the testing branch, please proceed like that.
 
-``` bash
+```bash
 sudo yunohost app install https://github.com/YunoHost-Apps/rallly_ynh/tree/testing --debug
 or
 sudo yunohost app upgrade rallly -u https://github.com/YunoHost-Apps/rallly_ynh/tree/testing --debug
