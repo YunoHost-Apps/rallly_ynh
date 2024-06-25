@@ -18,7 +18,7 @@ NON debe editarse manualmente.
 
 Schedule group meetings with friends, colleagues and teams. Create meeting polls to find the best date and time to organize an event based on your participants' availability.
 
-**Versión proporcionada:** 3.7.0~ynh1
+**Versión proporcionada:** 3.8.1~ynh1
 
 **Demo:** <https://app.rallly.co/polls>
 
