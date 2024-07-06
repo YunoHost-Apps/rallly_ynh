@@ -5,7 +5,7 @@ Il NE doit PAS être modifié à la main.
 
 # Rallly pour YunoHost
 
-[![Niveau d’intégration](https://dash.yunohost.org/integration/rallly.svg)](https://dash.yunohost.org/appci/app/rallly) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
+[![Niveau d’intégration](https://dash.yunohost.org/integration/rallly.svg)](https://ci-apps.yunohost.org/ci/apps/rallly/) ![Statut du fonctionnement](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![Statut de maintenance](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
 
 [![Installer Rallly avec YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=rallly)
 
@@ -18,7 +18,7 @@ Il NE doit PAS être modifié à la main.
 
 Planifiez des réunions de groupe avec des amis, des collègues et des équipes. Créez des sondages de réunion pour trouver la meilleure date et heure pour organiser un événement en fonction de la disponibilité de vos participants.
 
-**Version incluse :** 3.7.0~ynh1
+**Version incluse :** 3.9.0~ynh1
 
 **Démo :** <https://app.rallly.co/polls>
 
