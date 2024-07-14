@@ -1,8 +1,6 @@
 #!/bin/bash
 
 #=================================================
-# GENERIC START
-#=================================================
 # IMPORT GENERIC HELPERS
 #=================================================
 
@@ -10,13 +8,18 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD UPGRADE STEPS
-#=================================================
 # STOP SYSTEMD SERVICE
 #=================================================
 ynh_script_progression --message="Stopping a systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="stop" --log_path="systemd"
+ynh_systemd_action --service_name="$app" --action="stop" --log_path="systemd"
+
+#=================================================
+# UPGRADE DEPENDENCIES
+#=================================================
+ynh_script_progression --message="Upgrading NodeJS..." --weight=1
+
+ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -26,45 +29,38 @@ ynh_script_progression --message="Upgrading source files..." --weight=1
 ynh_setup_source --dest_dir="$install_dir" --keep=".env"
 
 chmod -R o-rwx "$install_dir"
-chown -R $app:www-data "$install_dir"
+chown -R "$app:www-data" "$install_dir"
 
 #=================================================
-# UPGRADE DEPENDENCIES
+# CONFIGURE THE APP
 #=================================================
-ynh_script_progression --message="Upgrading dependencies..." --weight=1
+ynh_script_progression --message="Updating $app's configuration files..." --weight=1
 
-ynh_exec_warn_less ynh_install_nodejs --nodejs_version=$nodejs_version
+pushd $install_dir
+    ynh_use_nodejs
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" yarn install
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" yarn build
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" yarn db:deploy
+popd
 
 #=================================================
-# NGINX CONFIGURATION
+# REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression --message="Upgrading NGINX web server configuration..." --weight=1
+ynh_script_progression --message="Upgrading system configurations related to $app..." --weight=1
 
 # Create a dedicated NGINX config
 ynh_add_nginx_config
 
 # Create a dedicated systemd config
 ynh_add_systemd_config
-
-yunohost service add $app --description="Group-meeting manager" --log="/var/log/$app/$app.log"
-
-#=================================================
-# CONFIGURE THE APP
-#=================================================
-ynh_script_progression --message="Configuring the app..." --weight=15
-
-pushd $install_dir
-	ynh_use_nodejs
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn install
-	ynh_exec_warn_less ynh_exec_as $app env $ynh_node_load_PATH yarn build
-popd
+yunohost service add "$app" --description="Group-meeting manager" --log="/var/log/$app/$app.log"
 
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
-ynh_script_progression --message="Starting a systemd service..." --weight=1
+ynh_script_progression --message="Starting $app's systemd service..." --weight=1
 
-ynh_systemd_action --service_name=$app --action="start" --log_path="systemd"
+ynh_systemd_action --service_name="$app" --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
