@@ -5,7 +5,7 @@
 
 # YunoHost 上的 Rallly
 
-[![集成程度](https://dash.yunohost.org/integration/rallly.svg)](https://dash.yunohost.org/appci/app/rallly) ![工作状态](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
+[![集成程度](https://dash.yunohost.org/integration/rallly.svg)](https://ci-apps.yunohost.org/ci/apps/rallly/) ![工作状态](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![维护状态](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
 
 [![使用 YunoHost 安装 Rallly](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=rallly)
 
@@ -18,7 +18,7 @@
 
 Schedule group meetings with friends, colleagues and teams. Create meeting polls to find the best date and time to organize an event based on your participants' availability.
 
-**分发版本：** 3.7.0~ynh1
+**分发版本：** 3.9.1~ynh1
 
 **演示：** <https://app.rallly.co/polls>
 
