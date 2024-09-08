@@ -4,8 +4,6 @@ source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# STANDARD REMOVE
-#=================================================
 # REMOVE SERVICE INTEGRATION IN YUNOHOST
 #=================================================
 ynh_script_progression "Removing system configurations related to $app..."
@@ -16,10 +14,8 @@ then
 	yunohost service remove $app
 fi
 
-# Remove the dedicated systemd config
 ynh_config_remove_systemd
 
-# Remove the dedicated NGINX config
 ynh_config_remove_nginx
 
 ynh_nodejs_remove
