@@ -25,9 +25,9 @@ ynh_script_progression "Upgrading dependencies..."
 ynh_nodejs_install
 
 #=================================================
-# NGINX CONFIGURATION
+# REAPPLY SYSTEM CONFIGURATIONS
 #=================================================
-ynh_script_progression "Upgrading NGINX web server configuration..."
+ynh_script_progression "Upgrading system configurations related to $app..."
 
 ynh_config_add_nginx
 
