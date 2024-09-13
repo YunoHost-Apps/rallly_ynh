@@ -49,6 +49,7 @@ ynh_script_progression "Configuring the app..."
 
 pushd $install_dir
 	ynh_hide_warnings ynh_exec_as_app yarn install
+	ynh_hide_warnings ynh_exec_as_app yarn prisma generate
 	ynh_hide_warnings ynh_exec_as_app yarn build
 	ynh_hide_warnings ynh_exec_as_app yarn db:deploy
 popd
