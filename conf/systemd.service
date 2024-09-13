@@ -10,7 +10,7 @@ WorkingDirectory=__INSTALL_DIR__/
 Environment="NODE_ENV=production"
 Environment="PORT=__PORT__"
 Environment="PATH=__PATH_WITH_NODEJS__"
-ExecStart=__NODEJS_DIR__/npm run start
+ExecStart=__NODEJS_DIR__/node apps/web/server.js
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
