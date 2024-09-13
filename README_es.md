@@ -18,7 +18,7 @@ No se debe editar a mano.
 
 Schedule group meetings with friends, colleagues and teams. Create meeting polls to find the best date and time to organize an event based on your participants' availability.
 
-**Versión actual:** 3.9.1~ynh1
+**Versión actual:** 3.10.1~ynh1
 
 **Demo:** <https://app.rallly.co/polls>
 
@@ -36,7 +36,7 @@ Schedule group meetings with friends, colleagues and teams. Create meeting polls
 
 ## Información para desarrolladores
 
-Por favor enviar sus correcciones a la [`branch testing`](https://github.com/YunoHost-Apps/rallly_ynh/tree/testing
+Por favor enviar sus correcciones a la [rama `testing`](https://github.com/YunoHost-Apps/rallly_ynh/tree/testing).
 
 Para probar la rama `testing`, sigue asÍ:
 
