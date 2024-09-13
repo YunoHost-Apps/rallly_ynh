@@ -7,8 +7,6 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
-Environment="NODE_ENV=production"
-Environment="PORT=__PORT__"
 Environment="PATH=__PATH_WITH_NODEJS__"
 ExecStart=__NODEJS_DIR__/npm start
 
