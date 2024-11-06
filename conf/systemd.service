@@ -8,7 +8,7 @@ User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
 Environment="PATH=__PATH_WITH_NODEJS__"
-ExecStart=__NODEJS_DIR__/npm start
+ExecStart=/usr/bin/yarn start
 
 # Sandboxing options to harden security
 # Depending on specificities of your service/app, you may need to tweak these
