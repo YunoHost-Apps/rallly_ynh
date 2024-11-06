@@ -18,7 +18,7 @@ Il NE doit PAS être modifié à la main.
 
 Planifiez des réunions de groupe avec des amis, des collègues et des équipes. Créez des sondages de réunion pour trouver la meilleure date et heure pour organiser un événement en fonction de la disponibilité de vos participants.
 
-**Version incluse :** 3.10.1~ynh1
+**Version incluse :** 3.11.2~ynh1
 
 **Démo :** <https://app.rallly.co/polls>
 
