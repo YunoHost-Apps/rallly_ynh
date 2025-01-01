@@ -5,7 +5,7 @@ name = "Rallly"
 description.en = "Tool for creating scheduling polls"
 description.fr = "Outil de création de sondages de planification"
 
-version = "3.11.2~ynh1"
+version = "3.11.2~ynh2"
 
 maintainers = ["eric_G"]
 
