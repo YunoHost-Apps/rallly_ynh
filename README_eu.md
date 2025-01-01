@@ -5,7 +5,9 @@ EZ editatu eskuz.
 
 # Rallly YunoHost-erako
 
-[![Integrazio maila](https://dash.yunohost.org/integration/rallly.svg)](https://ci-apps.yunohost.org/ci/apps/rallly/) ![Funtzionamendu egoera](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![Mantentze egoera](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
+[![Integrazio maila](https://apps.yunohost.org/badge/integration/rallly)](https://ci-apps.yunohost.org/ci/apps/rallly/)
+![Funtzionamendu egoera](https://apps.yunohost.org/badge/state/rallly)
+![Mantentze egoera](https://apps.yunohost.org/badge/maintained/rallly)
 
 [![Instalatu Rallly YunoHost-ekin](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=rallly)
 

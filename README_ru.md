@@ -5,7 +5,9 @@
 
 # Rallly для YunoHost
 
-[![Уровень интеграции](https://dash.yunohost.org/integration/rallly.svg)](https://ci-apps.yunohost.org/ci/apps/rallly/) ![Состояние работы](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![Состояние сопровождения](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
+[![Уровень интеграции](https://apps.yunohost.org/badge/integration/rallly)](https://ci-apps.yunohost.org/ci/apps/rallly/)
+![Состояние работы](https://apps.yunohost.org/badge/state/rallly)
+![Состояние сопровождения](https://apps.yunohost.org/badge/maintained/rallly)
 
 [![Установите Rallly с YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=rallly)
 
