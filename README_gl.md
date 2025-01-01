@@ -5,7 +5,9 @@ NON debe editarse manualmente.
 
 # Rallly para YunoHost
 
-[![Nivel de integración](https://dash.yunohost.org/integration/rallly.svg)](https://ci-apps.yunohost.org/ci/apps/rallly/) ![Estado de funcionamento](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![Estado de mantemento](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
+[![Nivel de integración](https://apps.yunohost.org/badge/integration/rallly)](https://ci-apps.yunohost.org/ci/apps/rallly/)
+![Estado de funcionamento](https://apps.yunohost.org/badge/state/rallly)
+![Estado de mantemento](https://apps.yunohost.org/badge/maintained/rallly)
 
 [![Instalar Rallly con YunoHost](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=rallly)
 
