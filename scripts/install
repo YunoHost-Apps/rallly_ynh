@@ -1,10 +1,14 @@
 #!/bin/bash
 
+#=================================================
+# IMPORT GENERIC HELPERS
+#=================================================
+
 source _common.sh
 source /usr/share/yunohost/helpers
 
 #=================================================
-# RETRIEVE ARGUMENTS FROM THE MANIFEST
+# INITIALIZE AND STORE SETTINGS
 #=================================================
 
 email=$(ynh_user_get_info --username=$admin --key=mail)
@@ -23,18 +27,8 @@ ynh_nodejs_install
 #=================================================
 ynh_script_progression "Setting up source files..."
 
+# Download, check integrity, uncompress and patch the source from manifest.toml
 ynh_setup_source --dest_dir="$install_dir"
-
-#=================================================
-# SYSTEM CONFIGURATION
-#=================================================
-ynh_script_progression "Adding system configurations related to $app..."
-
-ynh_config_add_nginx
-
-ynh_config_add_systemd
-
-yunohost service add $app --description="Group-meeting manager" --log="/var/log/$app/$app.log"
 
 #=================================================
 # APP INITIAL CONFIGURATION
@@ -43,15 +37,30 @@ ynh_script_progression "Adding $app's configuration files..."
 
 ynh_config_add --template=".env" --destination="$install_dir/.env"
 
+chmod 400 "$install_dir/.env"
+chown "$app:$app" "$install_dir/.env"
+
 #=================================================
-# CONFIGURE THE APP
+# SYSTEM CONFIGURATION
 #=================================================
-ynh_script_progression "Configuring the app..."
+ynh_script_progression "Adding system configurations related to $app..."
+
+# Create a dedicated NGINX config using the conf/nginx.conf template
+ynh_config_add_nginx
+
+# Create a dedicated systemd config
+ynh_config_add_systemd
+yunohost service add "$app" --description="Group-meeting manager" --log="/var/log/$app/$app.log"
+
+#=================================================
+# BUILD THE APP
+#=================================================
+ynh_script_progression "Building the app..."
 
 pushd $install_dir
 	ynh_hide_warnings ynh_exec_as_app yarn install
 	ynh_hide_warnings ynh_exec_as_app yarn prisma generate
-	ynh_hide_warnings ynh_exec_as_app yarn build
+	ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" yarn build
 	ynh_hide_warnings ynh_exec_as_app yarn db:deploy
 popd
 
@@ -60,7 +69,8 @@ popd
 #=================================================
 ynh_script_progression "Starting $app's systemd service..."
 
-ynh_systemctl --service=$app --action="start" --log_path="systemd"
+# Start a systemd service
+ynh_systemctl --service="$app" --action="start" --log_path="systemd"
 
 #=================================================
 # END OF SCRIPT
