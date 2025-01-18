@@ -53,6 +53,7 @@ ynh_script_progression "Building the app..."
 pushd $install_dir
 	ynh_hide_warnings ynh_exec_as_app yarn install
 	ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" yarn build
+	ynh_hide_warnings ynh_exec_as_app yarn cache clean
 popd
 
 #=================================================
