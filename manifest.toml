@@ -17,12 +17,13 @@ admindoc = "https://support.rallly.co/introduction"
 code = "https://github.com/lukevella/rallly"
 
 [integration]
-yunohost = ">= 12.0.9"
+yunohost = ">= 11.2.30"
 helpers_version = "2.1"
 architectures = "all"
 multi_instance = false
 
 ldap = false
+
 sso = false
 
 disk = "50M"
@@ -41,21 +42,21 @@ ram.runtime = "50M"
     type = "user"
 
 [resources]
-        [resources.sources.main]
-        url = "https://github.com/lukevella/rallly/archive/refs/tags/v3.11.2.tar.gz"
-        sha256 = "cf87699e7faffef8b7048af72fea1097602c04dae4eb4ac16853ae5d15410c5c"
-        autoupdate.strategy = "latest_github_release"
+    [resources.sources.main]
+    url = "https://github.com/lukevella/rallly/archive/refs/tags/v3.11.2.tar.gz"
+    sha256 = "cf87699e7faffef8b7048af72fea1097602c04dae4eb4ac16853ae5d15410c5c"
+    autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
     allow_email = true
-    
+
     [resources.install_dir]
+
+    [resources.permissions]
+    main.url = "/"
 
     [resources.ports]
     main.default = 3000
-    
-    [resources.permissions]
-    main.url = "/"
 
     [resources.apt]
     packages = "postgresql"
