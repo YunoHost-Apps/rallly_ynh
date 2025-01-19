@@ -5,7 +5,9 @@ Hij mag NIET handmatig aangepast worden.
 
 # Rallly voor Yunohost
 
-[![Integratieniveau](https://dash.yunohost.org/integration/rallly.svg)](https://ci-apps.yunohost.org/ci/apps/rallly/) ![Mate van functioneren](https://ci-apps.yunohost.org/ci/badges/rallly.status.svg) ![Onderhoudsstatus](https://ci-apps.yunohost.org/ci/badges/rallly.maintain.svg)
+[![Integratieniveau](https://apps.yunohost.org/badge/integration/rallly)](https://ci-apps.yunohost.org/ci/apps/rallly/)
+![Mate van functioneren](https://apps.yunohost.org/badge/state/rallly)
+![Onderhoudsstatus](https://apps.yunohost.org/badge/maintained/rallly)
 
 [![Rallly met Yunohost installeren](https://install-app.yunohost.org/install-with-yunohost.svg)](https://install-app.yunohost.org/?app=rallly)
 
@@ -18,7 +20,7 @@ Hij mag NIET handmatig aangepast worden.
 
 Schedule group meetings with friends, colleagues and teams. Create meeting polls to find the best date and time to organize an event based on your participants' availability.
 
-**Geleverde versie:** 3.11.2~ynh1
+**Geleverde versie:** 3.11.2~ynh2
 
 **Demo:** <https://app.rallly.co/polls>
 
