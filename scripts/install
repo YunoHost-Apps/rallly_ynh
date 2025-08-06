@@ -47,15 +47,15 @@ yunohost service add "$app" --description="Group-meeting manager" --log="/var/lo
 #=================================================
 ynh_script_progression "Building the app..."
 
-pushd $install_dir
+pushd $install_dir/apps/web
 	set -o allexport
     source "$install_dir/.env"
     set +o allexport
     ynh_hide_warnings corepack enable
     ynh_hide_warnings npm install -g corepack@latest
     ynh_hide_warnings ynh_exec_as_app corepack prepare pnpm@9 --activate
-	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add turbo
-	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add prisma
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add -w turbo
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add -w prisma
 	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm turbo prune --scope=@rallly/web
 
 

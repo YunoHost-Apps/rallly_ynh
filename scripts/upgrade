@@ -61,6 +61,7 @@ pushd $install_dir/apps/web
     ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
     ynh_hide_warnings ynh_exec_as_app pnpm store prune
 popd
+
 #=================================================
 # START SYSTEMD SERVICE
 #=================================================
