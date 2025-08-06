@@ -40,7 +40,7 @@ yunohost service add "$app" --description="Group-meeting manager" --log="/var/lo
 #=================================================
 ynh_script_progression "Building the app..."
 
-pushd $install_dir/apps/web
+pushd $install_dir/
 	set -o allexport
     source "$install_dir/.env"
     set +o allexport
