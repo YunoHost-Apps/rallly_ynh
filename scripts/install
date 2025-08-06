@@ -48,12 +48,25 @@ yunohost service add "$app" --description="Group-meeting manager" --log="/var/lo
 ynh_script_progression "Building the app..."
 
 pushd $install_dir
-	corepack enable
-	ynh_hide_warnings ynh_exec_as_app yarn install
-	ynh_hide_warnings ynh_exec_as_app yarn prisma generate
-	ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" yarn build
-	ynh_hide_warnings ynh_exec_as_app yarn db:deploy
-	ynh_hide_warnings ynh_exec_as_app yarn cache clean
+	set -o allexport
+    source "$install_dir/.env"
+    set +o allexport
+    ynh_hide_warnings corepack enable
+    ynh_hide_warnings npm install -g corepack@latest
+    ynh_hide_warnings ynh_exec_as_app corepack prepare pnpm@9 --activate
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add turbo
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add prisma
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm turbo prune --scope=@rallly/web
+
+
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm install --frozen-lockfile --aggregate-output
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm db:generate 
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm build
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm db:deploy
+
+    #remove unneeded files
+    ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
+    ynh_hide_warnings ynh_exec_as_app pnpm store prune
 popd
 
 #=================================================
