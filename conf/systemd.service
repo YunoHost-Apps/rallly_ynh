@@ -7,8 +7,9 @@ Type=simple
 User=__APP__
 Group=__APP__
 WorkingDirectory=__INSTALL_DIR__/
+EnvironmentFile=__INSTALL_DIR__/.env
 Environment="PATH=__PATH_WITH_NODEJS__"
-ExecStart=/usr/bin/yarn start
+ExecStart=__NODEJS_DIR__/node __INSTALL_DIR__/apps/web/.next/standalone/apps/web/server.js
 
 # Sandboxing options to harden security
 # Details for these options: https://www.freedesktop.org/software/systemd/man/systemd.exec.html
