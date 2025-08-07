@@ -57,8 +57,8 @@ pushd $install_dir/
 	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 DIRECT_DATABASE_URL="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" NODE_OPTIONS="--max-old-space-size=3000" pnpm db:deploy
 
     #remove unneeded files
-    ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts --yes
-    ynh_hide_warnings ynh_exec_as_app pnpm store prune
+    ynh_hide_warnings ynh_exec_as_app CI=true pnpm prune --prod --ignore-scripts | yes
+    ynh_hide_warnings ynh_exec_as_app CI=true pnpm store prune
 popd
 
 
