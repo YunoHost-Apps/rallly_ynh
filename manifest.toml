@@ -37,9 +37,6 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
-    [install.admin]
-    type = "user"
-
 [resources]
     [resources.sources.main]
     url = "https://github.com/lukevella/rallly/archive/refs/tags/v4.2.0.tar.gz"

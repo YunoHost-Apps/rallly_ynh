@@ -54,11 +54,10 @@ pushd $install_dir/
 	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm install --frozen-lockfile --aggregate-output
 	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm db:generate 
 	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm build
-	export DIRECT_DATABASE_URL="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name"
 	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 DIRECT_DATABASE_URL="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" NODE_OPTIONS="--max-old-space-size=3000" pnpm db:deploy
 
     #remove unneeded files
-    ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts
+    ynh_hide_warnings ynh_exec_as_app pnpm prune --prod --ignore-scripts --yes
     ynh_hide_warnings ynh_exec_as_app pnpm store prune
 popd
 
