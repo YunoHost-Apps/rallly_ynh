@@ -67,6 +67,15 @@ pushd $install_dir/
     ynh_hide_warnings ynh_exec_as_app CI=true pnpm store prune
 popd
 
+#Remove unneeded files
+ynh_safe_rm "$install_dir"/.local
+ynh_safe_rm "$install_dir"/node_modules
+ynh_safe_rm "$install_dir"/apps/web/.next/cache
+ynh_safe_rm "$install_dir"/.cache
+ynh_safe_rm "$install_dir"/.turbo
+ynh_safe_rm "$install_dir"/.vscode
+ynh_safe_rm "$install_dir"/.github
+
 ynh_config_add_logrotate
 
 #=================================================
