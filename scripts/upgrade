@@ -3,7 +3,7 @@
 source _common.sh
 source /usr/share/yunohost/helpers
 
-ynh_app_setting_set_default --key=admin_mail --value=$email
+ynh_app_setting_set_default --key=admin_mail --value=$(ynh_user_get_info --username=$admin --key=mail)
 
 #=================================================
 # STOP SYSTEMD SERVICE
