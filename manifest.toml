@@ -37,6 +37,9 @@ ram.runtime = "50M"
     type = "group"
     default = "visitors"
 
+    [install.admin]
+    type = "user"
+
 [resources]
     [resources.sources.main]
     url = "https://github.com/lukevella/rallly/archive/refs/tags/v4.2.0.tar.gz"
@@ -50,6 +53,11 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+
+    admin.url = "/control-panel"
+    admin.allowed = "admins"
+    api.show_tile = false
+    api.protected = true
 
     [resources.ports]
     main.default = 3000

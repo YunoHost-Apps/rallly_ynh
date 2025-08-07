@@ -10,6 +10,9 @@ source /usr/share/yunohost/helpers
 key=$(ynh_string_random --length=32)
 secret=$(ynh_string_random --length=32)
 
+admin=$(ynh_user_get_info --username=$admin --key=username)
+admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
+
 #=================================================
 # INSTALL DEPENDENCIES
 #=================================================
