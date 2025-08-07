@@ -61,6 +61,7 @@ pushd $install_dir/
     ynh_hide_warnings ynh_exec_as_app CI=true pnpm store prune
 popd
 
+ynh_config_add_logrotate
 
 #=================================================
 # START SYSTEMD SERVICE
