@@ -7,16 +7,11 @@ source /usr/share/yunohost/helpers
 # INITIALIZE AND STORE SETTINGS
 #=================================================
 
-email=$(ynh_user_get_info --username=$admin --key=mail)
 key=$(ynh_string_random --length=32)
 secret=$(ynh_string_random --length=32)
 
-#=================================================
-# INSTALL DEPENDENCIES
-#=================================================
-ynh_script_progression "Installing dependencies..."
-
-ynh_nodejs_install
+admin=$(ynh_user_get_info --username=$admin --key=username)
+admin_mail=$(ynh_user_get_info --username=$admin --key=mail)
 
 #=================================================
 # DOWNLOAD, CHECK AND UNPACK SOURCE
@@ -47,13 +42,37 @@ yunohost service add "$app" --description="Group-meeting manager" --log="/var/lo
 #=================================================
 ynh_script_progression "Building the app..."
 
-pushd $install_dir
-	ynh_hide_warnings ynh_exec_as_app yarn install
-	ynh_hide_warnings ynh_exec_as_app yarn prisma generate
-	ynh_hide_warnings ynh_exec_as_app NODE_OPTIONS="--max-old-space-size=3000" yarn build
-	ynh_hide_warnings ynh_exec_as_app yarn db:deploy
-	ynh_hide_warnings ynh_exec_as_app yarn cache clean
+pushd $install_dir/
+	set -o allexport
+    source "$install_dir/.env"
+    set +o allexport
+    ynh_hide_warnings corepack enable
+    ynh_hide_warnings npm install -g corepack@latest
+    ynh_hide_warnings ynh_exec_as_app corepack prepare pnpm@9 --activate
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add -w turbo
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm add -w prisma
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm turbo prune --scope=@rallly/web
+
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm install --frozen-lockfile --aggregate-output
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm db:generate 
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 NODE_OPTIONS="--max-old-space-size=3000" pnpm build
+	ynh_hide_warnings ynh_exec_as_app CYPRESS_INSTALL_BINARY=0 DIRECT_DATABASE_URL="postgres://$db_user:$db_pwd@127.0.0.1:5432/$db_name" NODE_OPTIONS="--max-old-space-size=3000" pnpm db:deploy
+
+    #remove unneeded files
+    ynh_hide_warnings ynh_exec_as_app CI=true pnpm prune --prod --ignore-scripts
+    ynh_hide_warnings ynh_exec_as_app CI=true pnpm store prune
 popd
+
+#Remove unneeded files
+ynh_safe_rm "$install_dir"/.local
+ynh_safe_rm "$install_dir"/node_modules
+ynh_safe_rm "$install_dir"/apps/web/.next/cache
+ynh_safe_rm "$install_dir"/.cache
+ynh_safe_rm "$install_dir"/.turbo
+ynh_safe_rm "$install_dir"/.vscode
+ynh_safe_rm "$install_dir"/.github
+
+ynh_config_add_logrotate
 
 #=================================================
 # START SYSTEMD SERVICE
