@@ -5,7 +5,7 @@ name = "Rallly"
 description.en = "Tool for creating scheduling polls"
 description.fr = "Outil de création de sondages de planification"
 
-version = "4.10.2~ynh1"
+version = "4.11.0~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -42,8 +42,8 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    url = "https://github.com/lukevella/rallly/archive/refs/tags/v4.10.2.tar.gz"
-    sha256 = "da465102d8ca32fbedd4c2950fd4c697f87f53d0c3d59edc138055c78485b1f7"
+    url = "https://github.com/lukevella/rallly/archive/refs/tags/v4.11.0.tar.gz"
+    sha256 = "4445e1ad5555c60bd17dfc3c0421a37a5ed6eacdba69a666e48c4fae7844aeb3"
     autoupdate.strategy = "latest_github_release"
 
     [resources.system_user]
