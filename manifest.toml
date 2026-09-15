@@ -17,7 +17,7 @@ admindoc = "https://support.rallly.co/introduction"
 code = "https://github.com/lukevella/rallly"
 
 [integration]
-yunohost = ">= 12.1.39"
+yunohost = ">= 12.1.40"
 helpers_version = "2.1"
 architectures = [ "amd64", "arm64" ]
 multi_instance = false
@@ -53,7 +53,6 @@ ram.runtime = "50M"
     autoupdate.asset.amd64 = "rallly-web-release-amd64\\.tar\\.gz"
     autoupdate.asset.arm64 = "rallly-web-release-arm64.tar.gz"
     
-
     [resources.system_user]
     allow_email = true
 
