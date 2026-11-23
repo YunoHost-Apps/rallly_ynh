@@ -5,7 +5,7 @@ name = "Rallly"
 description.en = "Tool for creating scheduling polls"
 description.fr = "Outil de création de sondages de planification"
 
-version = "4.17.1~ynh1"
+version = "4.17.2~ynh1"
 
 maintainers = ["eric_G"]
 
@@ -42,11 +42,11 @@ ram.runtime = "50M"
 
 [resources]
     [resources.sources.main]
-    amd64.url = "https://github.com/orhtej2/rallly-build/releases/download/v4.17.1/rallly-web-release-amd64.tar.gz"
-    amd64.sha256 = "caf07ddc0e81558be478aee5cb3de2a0d7b10519813543ea3e4c2519ad2830ae"
+    amd64.url = "https://github.com/orhtej2/rallly-build/releases/download/v4.17.2/rallly-web-release-amd64.tar.gz"
+    amd64.sha256 = "55210ab548a14f97b8587efd05409b0a308f2997bd1be209be53f775972fc676"
 
-    arm64.url = "https://github.com/orhtej2/rallly-build/releases/download/v4.17.1/rallly-web-release-arm64.tar.gz"
-    arm64.sha256 = "3ccc0f0387db261d1ee5d65b00accd57e3f901f72a8d0df01762902283c1c0d7"
+    arm64.url = "https://github.com/orhtej2/rallly-build/releases/download/v4.17.2/rallly-web-release-arm64.tar.gz"
+    arm64.sha256 = "a2fb8432447750af39f4a8789c9875601ae0cbbe4a93423c9b9644178c9a42d2"
 
     autoupdate.strategy = "latest_github_release"
     autoupdate.upstream = "https://github.com/orhtej2/rallly-build"
